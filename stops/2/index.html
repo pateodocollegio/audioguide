@@ -12,7 +12,7 @@
 
   <!-- place fav icons here -->
 
-  <title>Pateo do Collegio Audio Guide</title>
+  <title>An incredibly rare object</title>
   <meta name="description" content="Audio Guia Pateo do Collegio.
 ">
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="acmilabs" />
   <meta name="twitter:creator" content="acmilabs" />
-  <meta name="twitter:title" content="Pateo do Collegio Audio Guide" />
+  <meta name="twitter:title" content="An incredibly rare object" />
   <meta name="twitter:description" content="Audio Guia Pateo do Collegio.
 " />
   
@@ -29,7 +29,7 @@
 
   <!-- Canonical urls -->
 
-  <link rel="canonical" href="https://pateo.sampa.br/audioguide/">
+  <link rel="canonical" href="https://pateo.sampa.br/audioguide/stops/2/">
   <link rel="alternate" type="application/rss+xml" title="Pateo do Collegio Audio Guide" href="https://pateo.sampa.br/audioguide/feed.xml">
 
   <!-- Stylesheets -->
@@ -179,20 +179,28 @@ $(document).ready(function(){
 
 <!-- End Google Tag Manager -->
     <header class="site-header">
-  
-  <a class="site-title" href="/audioguide/">
-    <img src="/audioguide/assets/img/logo/audio-guide.png" alt="Pateo do Collegio Audio Guide logo" class="site-logo"/>
-  </a>
-  
+
+  <div class="site-header-wrapper">
+    
+    
+    <a class="site-header-back-button" href="/audioguide/">
+      <img src="/audioguide/assets/img/icons/button_back.png"/>
+    </a>
+    
+    <a class="site-title" href="/audioguide/">
+      <img src="/audioguide/assets/img/logo/audio-guide.png" alt="Pateo do Collegio Audio Guide logo" class="site-logo"/>
+    </a>
+
+    <a class="site-header-menu-button dont-use-ios-override" href="/audioguide/">
+      <img src="/audioguide/assets/img/icons/menu_icon.png"/>
+    </a>
+
+  </div>
+
 </header>
 
-
-    <div class="page-content main-page">
-      <div class="wrapper">
-        <div class="home">
-
-  <p>Select an audio guide stop to begin.</p>
-
+    <div class="slide-menu">
+  <h2>Select another stop</h2>
   <ul class="post-list">
     
     <li>
@@ -209,50 +217,186 @@ $(document).ready(function(){
         </a>
       </li>
   </ul>
-
-<!--
-
-For reference: This is a list of all the stops and titles in this audio guide
-
-
-    
-Stop #: 1
-Section Title: Introduction
-Title: Welcome to the first stop in the tour
-      
-Stop #: 2
-Section Title: The Middle
-Title: An incredibly rare object
-      
-Stop #: 3
-Section Title: The End
-Title: Last stop in the tour
-      
-
--->
-  
-<!--
-  <p class="rss-subscribe">subscribe <a href="/audioguide/feed.xml">via RSS</a></p>
--->
 </div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <div class="post-title-episode">
+      <div class="post-header-stop-id" style="background-image: url('/audioguide/assets/img/icons/headphones-light.png');"><span>2</span></div>
+      
+        <h2 class="post-header-section-title">The Middle</h1>
+      
+      
+        <h3 class="post-header-title">An incredibly rare object</h2>
+      
+    </div>
+  </header>
+  
+    <div class="slick-container post-hero-image-container">
+      <div class="slick-post-hero-image">
+        
+          <div class="post-hero-image">    
+            <img src="/audioguide/assets/img/stops/02-second-stop-01.jpg" alt="First example photo for stop 2"/>
+          </div>
+        
+          <div class="post-hero-image">    
+            <img src="/audioguide/assets/img/stops/02-second-stop-02.jpg" alt="Second example photo for stop 2"/>
+          </div>
+        
+      </div>
+    </div>
+  
+  <div class="post-content">
+    <p>Replace this section of text with the full transcript of your audio guide stop. Use a second level heading to flag the person speaking</p>
+
+<h2 id="person-speaking">Person speaking</h2>
+
+<blockquote>
+  <p>And this blockquote is styled to make it clear that this section really is someone speaking.</p>
+</blockquote>
+
+<p>And we can go back to a normal transcript.</p>
+
+<h3 id="a-third-level-heading">A third level heading</h3>
+
+<p>The example audio used here is borrowed from <a href="http://www.nasa.gov/connect/sounds/index.html#Discovery">NASA</a> under the terms of their <a href="http://www.nasa.gov/multimedia/guidelines/index.html">usage guidelines</a>. This is just a test clip, so you’ll need to replace it!</p>
+
+  </div>
+
+</article>
+
+  
+  
+  
 
       </div>
     </div>
 
-    <footer class="site-footer">
+<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+  <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <div class="audio-player">
+      
+      <div class="player-now-playing">
+        <p>
+        An incredibly rare object
+        </p>
+      </div>
 
-  <div class="wrapper">
+      
+      <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+      <div id="episode-element">
+        <audio>
+          <source id="episode-source" src="/audioguide/audio/NASA_main_Computers_are_in_Control.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+      </div>
 
-    <div class="partner-logos">
-      <!-- replace logos here! -->
-      <a href="https://www.acmi.net.au" target="_blank">
-        <img class="logo" src="/audioguide/assets/img/logo/acmi-white.png"/>
-      </a>
+      <div class="jp-progress">
+        <div class="jp-seek-bar">
+          <div class="jp-play-bar"></div>
+        </div>
+      </div>
+          
+      <div class="jp-no-solution">
+        <span>Update Required</span>
+        To play audio, be sure to enable JavaScript, and run a browser that supports HTML5 MP3 audio, or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+      </div>
+
+      
+      
+      <div class="player-buttons">
+        <div class="player-buttons-prev">
+          
+            
+            
+            
+              <a href="/audioguide/stops/1/"></a>
+              <span class="player-buttons-prev-number">1</span>
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+        </div>
+
+        
+        <div class="jp-controls" style="display: inline-block; text-align: center;">
+          <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
+        </div>
+        
+
+        <div class="player-buttons-next">
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+              <a href="/audioguide/stops/3/"></a>
+              <span class="player-buttons-next-number">3</span>
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+            
+            
+            
+          
+        </div>
+      </div>
+
+
     </div>
   </div>
-
-</footer>
-
+  </div>
 
   </body>
 

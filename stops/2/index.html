@@ -185,7 +185,7 @@ $(document).ready(function(){
       <img src="/audioguide/assets/img/icons/button_back.png"/>
     </a>
     
-    <a class="site-title" href="/">
+    <a class="site-title" href="/audioguide/index.html">
       <img src="/audioguide/assets/img/logo/pateo-bc.png" alt="Pateo do Collegio Audio Guide logo" class="site-logo"/>
     </a>
 
@@ -209,8 +209,12 @@ $(document).ready(function(){
           <span class="post-item">2</span>
         </a>
       </li><li>
-        <a class="post-link" href="//audioguide/stops/3/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+        <a class="post-link" href="/audioguide/stops/3/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
           <span class="post-item">3</span>
+        </a>
+      </li><li>
+        <a class="post-link" href="/audioguide/stops/4/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+          <span class="post-item">4</span>
         </a>
       </li>
   </ul>
@@ -222,11 +226,9 @@ $(document).ready(function(){
 
   <header class="post-header">
     <div class="post-title-episode">
-      <div>
         <div class="post-header-stop-id" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');"><span>2</span></div>      
         <h2 class="post-header-section-title" >
-          Igreja São José <br> de Anchieta</h1>
-      </div>      
+          Igreja São José <br> de Anchieta</h2>            
       <h3 class="post-header-title">Bem vindo à Igreja</h2>      
     </div>
   </header>
@@ -275,93 +277,46 @@ $(document).ready(function(){
         </div>
       </div>
   
-  <!--
       <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-    <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
-      <div class="audio-player">
-        
-        <div class="player-now-playing">
-          <p>
-          Welcome to the first stop in the tour
-          </p>
-        </div>
-  
-        
-        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-        <div id="episode-element">
-          <audio>
-            <source id="episode-source" src="/audio/NASA_main_APU_Shutdown.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>
-        </div>
-  
-        <div class="jp-progress">
-          <div class="jp-seek-bar">
-            <div class="jp-play-bar"></div>
+        <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
+          <div class="audio-player">          
+            <div class="player-now-playing">
+              <p>
+              Audio-Guia | Igreja
+              </p>
+            </div>          
+            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+            <div id="episode-element">
+              <audio>
+                <source id="episode-source" src="/audioguide/audio/teste.wav" type="audio/mpeg">
+              Seu navegador não suporta o audio-guia
+              </audio>
+            </div>
+            <div class="jp-progress">
+              <div class="jp-seek-bar">
+                <div class="jp-play-bar"></div>
+              </div>
+            </div>              
+            <div class="jp-no-solution">
+              <span>Atualização necessária</span>
+              Para ouvir o áudio, habilite o JavaScript e utilize um navegador que suporte HTML5 áudio. Ou atualize o seu <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+            </div>         
+            <div class="player-buttons">
+              <div class="player-buttons-prev">    
+                <a href="/audioguide/stops/1/"></a>
+                <span class="player-buttons-prev-number">1</span>           
+              </div>
+              <div class="jp-controls" style="display: inline-block; text-align: center;">
+                <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
+              </div>            
+              <div class="player-buttons-next">
+                    <a href="/audioguide/stops/3/"></a>
+                    <span class="player-buttons-next-number">3</span>
+              </div>
+            </div>
           </div>
         </div>
-            
-        <div class="jp-no-solution">
-          <span>Update Required</span>
-          To play audio, be sure to enable JavaScript, and run a browser that supports HTML5 MP3 audio, or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-        </div>
-  
-        
-        
-        <div class="player-buttons">
-          <div class="player-buttons-prev"> </div>
-  
-          
-          <div class="jp-controls" style="display: inline-block; text-align: center;">
-            <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
-          </div>
-          
-  
-          <div class="player-buttons-next">
-            
-              
-              
-              
-            
-              
-              
-              
-                <a href="/stops/2/"></a>
-                <span class="player-buttons-next-number">2</span>
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-          </div>
-        </div>
-  
-  
       </div>
-    </div>
-  </div> -->
-  
     </body>
   
   </html>

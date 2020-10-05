@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- place fav icons here -->
+
+  <title>04 | Museu de Arte Sacra</title>
+  <meta name="description" content="Audio Guia Pateo do Collegio.
+">
+
+  <!-- Twitter cards and OG Image for Facebook -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="acmilabs" />
+  <meta name="twitter:creator" content="acmilabs" />
+  <meta name="twitter:title" content="Welcome to the first stop in the tour" />
+  <meta name="twitter:description" content="Audio Guia Pateo do Collegio.
+" />
+  
+  <meta name="og:image" content="https://pateo.sampa.br/assets/img/meta/og-image.jpg" />
+  <meta name="twitter:image" content="https://pateo.sampa.br/assets/img/meta/og-image.jpg" />
+
+  <!-- Canonical urls -->
+
+  <link rel="canonical" href="https://pateo.sampa.br/stops/1/">
+  <link rel="alternate" type="application/rss+xml" title="Pateo do Collegio Audio Guide" href="https://pateo.sampa.br/feed.xml">
+
+  <!-- Stylesheets -->
+
+  <link rel="stylesheet" type="text/css" href="/audioguide/assets/js/slick.css" />
+  <link rel="stylesheet" type="text/css" href="/audioguide/assets/js/slick-theme.css" />
+
+  <!-- jQuery -->
+  <script src="/audioguide/assets/js/jquery-1.12.3.min.js"></script>
+  <script src="/audioguide/assets/js/slick.min.js"></script>
+
+  <!-- jPlayer -->
+  <script src="/audioguide/assets/js/jplayer/jquery.jplayer.min.js"></script>
+
+  <!-- CSS for this web app -->
+  <link rel='stylesheet' href='/audioguide/assets/css/main.css?v=1.0.0.1'>
+
+  <script type="text/javascript">
+
+// The JS code here is render blocking. We liked it this way, but you might want to change it if this sort of thing
+// worries you. More info on this here: https://varvy.com/pagespeed/render-blocking.html
+// The advantage of render blocking the below code is to prevent some flicker on page-load to make the audio guide
+// feel a little more 'app-like', but you mightn't find it necessary.
+
+
+// add fixedPosition support check, pulled from jQuery Mobile
+// This isn't a true check, but just flagging browsers with known issues with fixed positioning.
+// This is preferable to attempting to do a real check given the current widespread support for
+// Fixed positioning, so the devices that still have problems with it are fairly well known
+
+function fixedPosition() {
+  var w = window,
+    ua = navigator.userAgent,
+    platform = navigator.platform,
+    // Rendering engine is Webkit, and capture major version
+    wkmatch = ua.match( /AppleWebKit\/([0-9]+)/ ),
+    wkversion = !!wkmatch && wkmatch[ 1 ],
+    ffmatch = ua.match( /Fennec\/([0-9]+)/ ),
+    ffversion = !!ffmatch && ffmatch[ 1 ],
+    operammobilematch = ua.match( /Opera Mobi\/([0-9]+)/ ),
+    omversion = !!operammobilematch && operammobilematch[ 1 ];
+
+  if (
+    // iOS 4.3 and older : Platform is iPhone/Pad/Touch and Webkit version is less than 534 (ios5)
+    ( ( platform.indexOf( "iPhone" ) > -1 || platform.indexOf( "iPad" ) > -1  || platform.indexOf( "iPod" ) > -1 ) && wkversion && wkversion < 534 ) ||
+    // Opera Mini
+    ( w.operamini && ({}).toString.call( w.operamini ) === "[object OperaMini]" ) ||
+    ( operammobilematch && omversion < 7458 ) ||
+    //Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
+    ( ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533 ) ||
+    // Firefox Mobile before 6.0 -
+    ( ffversion && ffversion < 6 ) ||
+    // WebOS less than 3
+    ( "palmGetResource" in window && wkversion && wkversion < 534 ) ||
+    // MeeGo
+    ( ua.indexOf( "MeeGo" ) > -1 && ua.indexOf( "NokiaBrowser/8.5.0" ) > -1 ) ) {
+    return false;
+  }
+
+  return true;
+}
+
+$.extend( $.support, {
+  fixedPosition: fixedPosition()
+});
+
+// fixed position audio player
+
+if ($.support.fixedPosition) {
+ $("<style>").prop("type", "text/css").html("\
+    .audio-footer-container { \
+      position: fixed; \
+    }")
+  .appendTo("head");
+}
+
+// Prevent links from opening in a new window when viewing from iOS home screen
+// Helps ensure a more 'web appy' expierence.
+// Adjusted from gist posted by Github user @irae on @kylebarrow's Gist at:
+// https://gist.github.com/kylebarrow/1042026
+// this snippet available at: https://gist.github.com/irae/1042167
+// It's a whole document event listener, so will continue to work even if other links are added to the DOM after
+// the initial pageload. The while loop ensures that it bubbles up to hit any anchor links that have been clicked.
+
+  (function(document,navigator,standalone) {
+    // prevents links from apps from oppening in mobile safari
+    // this javascript must be the first script in your <head>
+    if ((standalone in navigator) && navigator[standalone]) {
+      var curnode, location=document.location, stop=/^(a|html)$/i;
+      document.addEventListener('click', function(e) {
+        curnode=e.target;
+        
+        while (!(stop).test(curnode.nodeName)) {
+          curnode=curnode.parentNode;
+        }
+        // Condidions to do this only on links to your own app
+        // if you want all links, use if('href' in curnode) instead.
+        if (curnode.className.indexOf("dont-use-ios-override") == -1) {
+          if(
+            'href' in curnode && // is a link
+            (chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+            ( !(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+              chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+          ) {
+            e.preventDefault();
+            location.href = curnode.href;
+          }
+        }
+      },false);
+    }
+  })(document,window.navigator,'standalone');
+
+// Initialise jPlayer, grabbed the MP3 source file from the audio element on the page.
+$(document).ready(function(){
+
+  $("#jquery_jplayer_1").jPlayer({
+    ready: function () {
+      $("#episode-element").hide();
+      $(this).jPlayer("setMedia", {
+        title: "",
+        mp3: $("#episode-source").attr("src")
+      });
+
+    },
+    swfPath: "/audioguide/assets/js/jplayer",
+    supplied: "mp3",
+    wmode: "window",
+    useStateClassSkin: true,
+    autoBlur: false,
+    smoothPlayBar: true,
+    keyEnabled: true,
+    remainingDuration: true,
+    toggleDuration: true
+  });
+});
+
+  </script>
+    <!-- JS for this web app -->
+  <script src="/audioguide/assets/js/main.js?v=1.0.0.1"></script>
+</head>
+
+
+  <body>
+    <!-- Google Tag Manager -->
+
+<!-- drop in your Google Tag Manager or Analytics snippet here! -->
+
+<!-- End Google Tag Manager -->
+    <header class="site-header">
+
+  <div class="site-header-wrapper">      
+    <a class="site-header-back-button" href="/audioguide/index.html">
+      <img src="/audioguide/assets/img/icons/button_back.png"/>
+    </a>
+    
+    <a class="site-title" href="/audioguide/index.html">
+      <img src="/audioguide/assets/img/logo/pateo-bc.png" alt="Pateo do Collegio Audio Guide logo" class="site-logo"/>
+    </a>
+
+    <a class="site-header-menu-button dont-use-ios-override" href="/">
+      <img src="/audioguide/assets/img/icons/menu_icon.png"/>
+    </a>
+  </div>
+
+</header>
+
+    <div class="slide-menu">
+  <h2>Selecionar outro local</h2>
+  <ul class="post-list">
+    
+    <li>
+        <a class="post-link" href="/audioguide/stops/1/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+          <span class="post-item">1</span>
+        </a>
+      </li><li>
+        <a class="post-link" href="/audioguide/stops/2/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+          <span class="post-item">2</span>
+        </a>
+      </li><li>
+        <a class="post-link" href="/audioguide/stops/3/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+          <span class="post-item">3</span>
+        </a>
+      </li>
+      </li><li>
+        <a class="post-link" href="/audioguide/stops/4/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+          <span class="post-item">4</span>
+        </a>
+      </li>
+  </ul>
+</div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <div class="post-title-episode">
+      <div>
+        <div class="post-header-stop-id" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');"><span>4</span></div>      
+        <h2 class="post-header-section-title" >
+          Museu de Arte Sacra dos Jesuítas</h2>
+      </div>      
+      <h3 class="post-header-title">Bem vindo ao Museu</h2>      
+    </div>
+  </header>
+  
+    <div class="slick-container post-hero-image-container">
+      <div class="slick-post-hero-image">
+        
+          <div class="post-hero-image">    
+            <img src="/audioguide/assets/img/stops/museu-1.jpg" alt="First example photo for stop 1"/>
+          </div>        
+          <div class="post-hero-image">    
+            <img src="/audioguide/assets/img/stops/museu-2.jpg" alt="Second example photo for stop 1"/>
+          </div>
+          <div class="post-hero-image">    
+            <img src="/audioguide/assets/img/stops/museu-3.jpg" alt="Second example photo for stop 1"/>
+          </div>
+          <div class="post-hero-image">    
+            <img src="/audioguide/assets/img/stops/museu-4.jpg" alt="Second example photo for stop 1"/>
+          </div>
+        
+      </div>
+    </div>
+  
+    <div class="post-content">
+      <h2 id="person-speaking-second-level-heading"> Histórico</h2> 
+      <p>O Museu de Arte Sacra dos Jesuítas (MASJ) está instalado no complexo arquitetônico que engloba a Igreja de Nossa Senhora do Rosário e a residência anexa dos jesuítas. Localizado na cidade de Embu das Artes, o prédio foi construído na virada do século XVII para o XVIII pelos padres da Companhia de Jesus.</p>
+  
+      <p> A construção deste complexo só foi possível a partir da doação das terras que o casal Fernão Dias Paes Leme e Catarina Camacha fizeram aos jesuítas do Colégio de São Paulo de Piratininga, atual Pateo do Collegio, no ano de 1624.</p>
+        
+      
+      <p>Para que a doação se concretizasse, a Sra. Catarina Camacha exigiu que os padres cuidassem da conversão dos indígenas que ali se encontravam, que fosse mantida a Capela de Santa Cruz na Igreja do Colégio, local onde ela seria enterrada, e que fosse organizado todos os anos uma festa em homenagem a Nossa Senhora do Rosário, hoje padroeira da cidade. </p>
+        
+      <p>Em decorrência desta doação, a Igreja de Nossa Senhora do Rosário foi construída por volta de 1690 sob as orientações do padre jesuíta Belchior de Pontes. O ponto escolhido para a construção era estratégico, por estar em um local alto, permitindo uma boa visão da região, próximo a pequenos riachos, além de ser um local mais afastado de vilas de colonos portugueses. Tais condições permitiram que os jesuítas prosseguissem com seu trabalho missionário junto aos índios ali aldeados. Já a construção da residência anexa ocorreu entre os anos de 1720 e 1740, projeto realizado pelo jesuíta Domingos Machado.</p>
+      
+      <h2 id="person-speaking-second-level-heading"> Acervo</h2> 
+      <p> O Museu de Arte Sacra dos Jesuítas é constituído por duas coleções: Igreja de Nossa Senhora do Rosário, reunidos ao longo de três séculos, e de objetos oriundos da Igreja de São Gonçalo Garcia – localizada no centro de São Paulo -, que a partir de 2005 passou a integrar o nosso acervo.</p> 
+      <p> Em exposição há imagens sacras confeccionadas durante os séculos 17, 18 e 19, paramentos litúrgicos e objetos utilizados nas celebrações religiosas. Destaca-se o conjunto de imagens de roca e de vestir entalhadas em madeira, uma das principais coleções deste gênero no país. As imagens de vestir eram utilizadas para a recomposição de passagens bíblicas pelos religiosos durante o trabalho da catequese; por vezes não eram inteiramente esculpidas já que posteriormente seriam cobertas por vestimentas. Por sua vez, as imagens de roca eram utilizadas em procissões, por serem mais leves.</p>
+      <p> Durante a visita também é possível conhecer o belo Altar da Igreja de Nossa Senhora do Rosário e a sua Sacristia, ambos decorados no início do século XVIII, este conjunto artístico é um dos mais relevantes para o estudo da Arte Paulista do período. </p>
+      
+  
+      <h3 id="a-third-level-heading"></h3>
+  
+    </div>
+  
+  </article>
+        </div>
+      </div>
+  
+      <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+        <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
+          <div class="audio-player">          
+            <div class="player-now-playing">
+              <p>
+              Audio-Guia | Museu
+              </p>
+            </div>          
+            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+            <div id="episode-element">
+              <audio>
+                <source id="episode-source" src="/audioguide/audio/teste.wav" type="audio/mpeg">
+              Seu navegador não suporta o audio-guia
+              </audio>
+            </div>
+            <div class="jp-progress">
+              <div class="jp-seek-bar">
+                <div class="jp-play-bar"></div>
+              </div>
+            </div>              
+            <div class="jp-no-solution">
+              <span>Atualização necessária</span>
+              Para ouvir o áudio, habilite o JavaScript e utilize um navegador que suporte HTML5 áudio. Ou atualize o seu <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+            </div>         
+            <div class="player-buttons">
+              <div class="player-buttons-prev">    
+                <a href="/audioguide/stops/3/"></a>
+                <span class="player-buttons-prev-number">3</span>           
+              </div>
+              <div class="jp-controls" style="display: inline-block; text-align: center;">
+                <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
+              </div>            
+              <div class="player-buttons-next">
+                    <a href="/audioguide/stops/5/"></a>
+                    <span class="player-buttons-next-number">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  
+  </html>

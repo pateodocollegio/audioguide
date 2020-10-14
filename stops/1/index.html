@@ -12,7 +12,7 @@
 
   <!-- place fav icons here -->
 
-  <title>Welcome to the first stop in the tour</title>
+  <title>1 | Cripta</title>
   <meta name="description" content="Audio Guia Pateo do Collegio.
 ">
 
@@ -24,13 +24,13 @@
   <meta name="twitter:description" content="Audio Guia Pateo do Collegio.
 " />
   
-  <meta name="og:image" content="https://pateo.sampa.br/audioguide/assets/img/meta/og-image.jpg" />
-  <meta name="twitter:image" content="https://pateo.sampa.br/audioguide/assets/img/meta/og-image.jpg" />
+  <meta name="og:image" content="https://pateo.sampa.br/assets/img/meta/og-image.jpg" />
+  <meta name="twitter:image" content="https://pateo.sampa.br/assets/img/meta/og-image.jpg" />
 
   <!-- Canonical urls -->
 
-  <link rel="canonical" href="https://pateo.sampa.br/audioguide/stops/1/">
-  <link rel="alternate" type="application/rss+xml" title="Pateo do Collegio Audio Guide" href="https://pateo.sampa.br/audioguide/feed.xml">
+  <link rel="canonical" href="https://pateo.sampa.br/stops/1/">
+  <link rel="alternate" type="application/rss+xml" title="Pateo do Collegio Audio Guide" href="https://pateo.sampa.br/feed.xml">
 
   <!-- Stylesheets -->
 
@@ -48,17 +48,6 @@
   <link rel='stylesheet' href='/audioguide/assets/css/main.css?v=1.0.0.1'>
 
   <script type="text/javascript">
-
-// The JS code here is render blocking. We liked it this way, but you might want to change it if this sort of thing
-// worries you. More info on this here: https://varvy.com/pagespeed/render-blocking.html
-// The advantage of render blocking the below code is to prevent some flicker on page-load to make the audio guide
-// feel a little more 'app-like', but you mightn't find it necessary.
-
-
-// add fixedPosition support check, pulled from jQuery Mobile
-// This isn't a true check, but just flagging browsers with known issues with fixed positioning.
-// This is preferable to attempting to do a real check given the current widespread support for
-// Fixed positioning, so the devices that still have problems with it are fairly well known
 
 function fixedPosition() {
   var w = window,
@@ -105,14 +94,6 @@ if ($.support.fixedPosition) {
     }")
   .appendTo("head");
 }
-
-// Prevent links from opening in a new window when viewing from iOS home screen
-// Helps ensure a more 'web appy' expierence.
-// Adjusted from gist posted by Github user @irae on @kylebarrow's Gist at:
-// https://gist.github.com/kylebarrow/1042026
-// this snippet available at: https://gist.github.com/irae/1042167
-// It's a whole document event listener, so will continue to work even if other links are added to the DOM after
-// the initial pageload. The while loop ensures that it bubbles up to hit any anchor links that have been clicked.
 
   (function(document,navigator,standalone) {
     // prevents links from apps from oppening in mobile safari
@@ -180,40 +161,41 @@ $(document).ready(function(){
 <!-- End Google Tag Manager -->
     <header class="site-header">
 
-  <div class="site-header-wrapper">
-    
-    
-    <a class="site-header-back-button" href="/audioguide/">
+  <div class="site-header-wrapper">      
+    <a class="site-header-back-button" href="/audioguide/index.html">
       <img src="/audioguide/assets/img/icons/button_back.png"/>
     </a>
     
-    <a class="site-title" href="/audioguide/">
-      <img src="/audioguide/assets/img/logo/audio-guide.png" alt="Pateo do Collegio Audio Guide logo" class="site-logo"/>
+    <a class="site-title" href="/audioguide/index.html">
+      <img src="/audioguide/assets/img/logo/pateo-bc.png" alt="Pateo do Collegio Audio Guide logo" class="site-logo"/>
     </a>
 
-    <a class="site-header-menu-button dont-use-ios-override" href="/audioguide/">
+    <a class="site-header-menu-button dont-use-ios-override" href="/">
       <img src="/audioguide/assets/img/icons/menu_icon.png"/>
     </a>
-
   </div>
 
 </header>
 
     <div class="slide-menu">
-  <h2>Select another stop</h2>
+  <h2>Selecionar outro local</h2>
   <ul class="post-list">
     
     <li>
-        <a class="post-link" href="/audioguide/stops/1/" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+        <a class="post-link" href="/audioguide/stops/1/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
           <span class="post-item">1</span>
         </a>
       </li><li>
-        <a class="post-link" href="/audioguide/stops/2/" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+        <a class="post-link" href="/audioguide/stops/2/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
           <span class="post-item">2</span>
         </a>
       </li><li>
-        <a class="post-link" href="/audioguide/stops/3/" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+        <a class="post-link" href="/audioguide/stops/3/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
           <span class="post-item">3</span>
+        </a>
+      </li><li>
+        <a class="post-link" href="/audioguide/stops/4/index.html" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');">
+          <span class="post-item">4</span>
         </a>
       </li>
   </ul>
@@ -222,179 +204,90 @@ $(document).ready(function(){
     <div class="page-content">
       <div class="wrapper">
         <article class="post">
+          <header class="post-header">
+            <div class="post-title-episode">
+              <div class="post-header-stop-id" style="background-image: url('/audioguide/assets/img/icons/headphones-dark.png');"><span>1</span></div>
+              
+                <h2 class="post-header-section-title">Cripta</h1>
+              
+              
+                <h3 class="post-header-title">Bem vindo à Cripta</h2>
+              
+            </div>
+          </header>  
+          <div class="slick-container post-hero-image-container">
+            <div class="slick-post-hero-image">
+              
+                <div class="post-hero-image">    
+                  <img src="/audioguide/assets/img/stops/cripta-1.jpg" alt="First example photo for stop 1"/>
+                </div>
+              
+                <div class="post-hero-image">    
+                  <img src="/audioguide/assets/img/stops/cripta-2.jpg" alt="Second example photo for stop 1"/>
+                </div>
+              
+            </div>
+          </div>  
+          <div class="post-content">
+            <h2 id="person-speaking-second-level-heading"> Histórico </h2> 
+            <p>Em São Paulo, até o surgimento do primeiro cemitério público, ocorrido no século XIX, tornou-se hábito <em>o sepultamento no interior das igrejas, </em> em seus altares laterais ou no recinto da capela-mor – sinal de alta distinção social. </p>
 
-  <header class="post-header">
-    <div class="post-title-episode">
-      <div class="post-header-stop-id" style="background-image: url('/audioguide/assets/img/icons/headphones-light.png');"><span>1</span></div>
-      
-        <h2 class="post-header-section-title">Introduction</h1>
-      
-      
-        <h3 class="post-header-title">Welcome to the first stop in the tour</h2>
-      
-    </div>
-  </header>
-  
-    <div class="slick-container post-hero-image-container">
-      <div class="slick-post-hero-image">
-        
-          <div class="post-hero-image">    
-            <img src="/audioguide/assets/img/stops/01-introduction-01.jpg" alt="First example photo for stop 1"/>
+            <p>  Este fato também ocorreu na Igreja do Colégio dos Jesuítas, onde foram enterrados os corpos de dos primeiros habitantes do povoado de Piratininga, entre os quais o do cacique Tibiriçá, posteriormente transladado para a Catedral da Sé.</p>
+              
+            <p>  <em>Somente em 1757 </em> foi construída uma galeria subterrânea- cripta- destinada à deposição final dos restos mortais dos jesuítas, atendendo a medida geral adotada em todas as igrejas da Companhia de Jesus. </p>
+              
+            <p>  Entretanto, três anos após esta providência, os jesuítas foram novamente expulsos e a cripta “entulhada” por ordem expressa do governador Morgado de Mateus. </p>
+              
+            <p>  A atual cripta foi reaberta por ocasião da reconfiguração do espaço jesuítico, em 1979, no Pateo do Collegio, sobre os alicerces de pedra da original. Esvaziada da sua função primitiva, <em>integra as dependências do Museu Anchieta </em> como área de exposições temporárias.</p>
+
+            <h2 id="person-speaking-second-level-heading"></h2>
+
+            <h3 id="a-third-level-heading"></h3>
+
           </div>
-        
-          <div class="post-hero-image">    
-            <img src="/audioguide/assets/img/stops/01-introduction-02.jpg" alt="Second example photo for stop 1"/>
+        </article>
+      </div>
+    </div>
+
+    <!--AUDIO-->
+    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+      <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div class="audio-player">          
+          <div class="player-now-playing">
+            <p>
+            Audio-Guia | Cripta
+            </p>
+          </div>          
+          <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+          <div id="episode-element">
+            <audio>
+              <source id="episode-source" src="/audioguide/audio/NASA_main_Computers_are_in_Control.mp3" type="audio/mpeg">
+            Seu navegador não suporta o audio-guia
+            </audio>
           </div>
-        
+          <div class="jp-progress">
+            <div class="jp-seek-bar">
+              <div class="jp-play-bar"></div>
+            </div>
+          </div>              
+          <div class="jp-no-solution">
+            <span>Atualização necessária</span>
+            Para ouvir o áudio, habilite o JavaScript e utilize um navegador que suporte HTML5 áudio. Ou atualize o seu <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+          </div>         
+          <div class="player-buttons">
+            <div class="player-buttons-prev">               
+            </div>
+            <div class="jp-controls" style="display: inline-block; text-align: center;">
+              <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
+            </div>            
+            <div class="player-buttons-next">
+                  <a href="/audioguide/stops/2/"></a>
+                  <span class="player-buttons-next-number">2</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  
-  <div class="post-content">
-    <p>Replace this section of text with the full transcript of your audio guide stop. Use a second level heading to flag the person speaking</p>
-
-<h2 id="person-speaking-second-level-heading">Person speaking (second level heading)</h2>
-
-<blockquote>
-  <p>And this blockquote is styled to make it clear that this section really is someone speaking.</p>
-</blockquote>
-
-<p>And we can go back to a normal transcript.</p>
-
-<h3 id="a-third-level-heading">A third level heading</h3>
-
-<p>The example audio used here is borrowed from <a href="http://www.nasa.gov/connect/sounds/index.html#Discovery">NASA</a> under the terms of their <a href="http://www.nasa.gov/multimedia/guidelines/index.html">usage guidelines</a>. This is just a test clip, so you’ll need to replace it!</p>
-
-  </div>
-
-</article>
-
-  
-  
-  
-
-      </div>
-    </div>
-
-<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-  <div class="jp-gui jp-interface audio-footer-container" data-role="footer" data-position="fixed" data-tap-toggle="false">
-    <div class="audio-player">
-      
-      <div class="player-now-playing">
-        <p>
-        Welcome to the first stop in the tour
-        </p>
-      </div>
-
-      
-      <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-      <div id="episode-element">
-        <audio>
-          <source id="episode-source" src="/audioguide/audio/NASA_main_APU_Shutdown.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>
-      </div>
-
-      <div class="jp-progress">
-        <div class="jp-seek-bar">
-          <div class="jp-play-bar"></div>
-        </div>
-      </div>
-          
-      <div class="jp-no-solution">
-        <span>Update Required</span>
-        To play audio, be sure to enable JavaScript, and run a browser that supports HTML5 MP3 audio, or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-      </div>
-
-      
-      
-      <div class="player-buttons">
-        <div class="player-buttons-prev">
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-        </div>
-
-        
-        <div class="jp-controls" style="display: inline-block; text-align: center;">
-          <button class="jp-play" role="button" tabindex="0" style="display: inline-block;"></button>
-        </div>
-        
-
-        <div class="player-buttons-next">
-          
-            
-            
-            
-          
-            
-            
-            
-              <a href="/audioguide/stops/2/"></a>
-              <span class="player-buttons-next-number">2</span>
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-  </div>
-
   </body>
 
 </html>
